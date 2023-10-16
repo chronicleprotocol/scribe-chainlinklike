@@ -1,6 +1,3 @@
-// @todo Check: IToll(self.scribe()).tolled(self) == true
-//       Check: self.chainlink().decimals() == self.decimals()
-
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.16;
 
