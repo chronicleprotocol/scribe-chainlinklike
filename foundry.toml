@@ -1,6 +1,32 @@
 [profile.default]
-src = "src"
-out = "out"
-libs = ["lib"]
+src = 'src'
+out = 'out'
+libs = ['lib']
+ffi = true
 
-# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+# Compilation
+solc_version = "0.8.16"
+optimizer = true
+optimizer_runs = 10_000
+via_ir = true
+extra_output_files = ["metadata", "irOptimized"]
+
+[fmt]
+line_length = 80
+int_types = "short"
+number_underscore = "preserve"
+ignore = []
+
+[doc]
+out = "docs_generated" # Note to not overwrite own docs
+
+[rpc_endpoints]
+eth = "${RPC_URL_ETHEREUM}"
+
+# Profile to compile without --via-ir and optimizations
+# Run via `FOUNDRY_PROFILE=no-via-ir forge ...`
+[profile.no-via-ir]
+optimizer = false
+via_ir = false
+
+# See more config options https://github.com/foundry-rs/foundry/tree/master/config
