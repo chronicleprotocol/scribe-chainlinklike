@@ -7,7 +7,9 @@ This document describes how to deploy a new `ScribeChainlinkLike` instance via _
 The following environment variables must be set:
 
 - `RPC_URL`: The RPC URL of an EVM node
-- `PRIVATE_KEY`: The private key to use
+- `KEYSTORE`: The path to the keystore file containing the encrypted private key
+    - Note that password can either be entered on request or set via the `KEYSTORE_PASSWORD` environment variable
+- `KEYSTORE_PASSWORD`: The password for the keystore file
 - `ETHERSCAN_API_URL`: The Etherscan API URL for the Etherscan's chain instance
     - Note that the API endpoint varies per Etherscan chain instance
     - Note to point to actual API endpoint (e.g. `/api`) and not just host
@@ -25,7 +27,7 @@ Note that an `.env.example` file is provided in the project root. To set all env
 To easily check the environment variables, run:
 
 ```bash
-$ env | grep -e "RPC_URL" -e "PRIVATE_KEY" -e "ETHERSCAN_API_URL" -e "ETHERSCAN_API_KEY" -e "GREENHOUSE" -e "SALT" -e "CHRONICLE" -e "CHAINLINK"
+$ env | grep -e "RPC_URL" -e "KEYSTORE" -e "KEYSTORE_PASSWORD" -e "ETHERSCAN_API_URL" -e "ETHERSCAN_API_KEY" -e "GREENHOUSE" -e "SALT" -e "CHRONICLE" -e "CHAINLINK"
 ```
 
 ## Code Adjustments
@@ -44,7 +46,8 @@ Deployment:
 ```bash
 $ SALT_BYTES32=$(cast format-bytes32-string $SALT) && \
   forge script \
-    --private-key "$PRIVATE_KEY" \
+    --keystore "$KEYSTORE" \
+    --password "$KEYSTORE_PASSWORD" \
     --broadcast \
     --rpc-url "$RPC_URL" \
     --sig "$(cast calldata "deploy(address,bytes32,address,address)" "$GREENHOUSE" "$SALT_BYTES32" "$CHRONICLE" "$CHAINLINK")" \
