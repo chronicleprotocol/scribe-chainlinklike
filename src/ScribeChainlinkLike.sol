@@ -46,6 +46,9 @@ interface IScribe {
  * @dev Note that this contract is stateless and does not offer any configuration
  *      once deployed. Toll management is delegated to the respective Chronicle
  *      oracle.
+ *
+ * @author Chronicle Labs, Inc
+ * @custom:security-contact security@chroniclelabs.org
  */
 contract ScribeChainlinkLike is IScribeChainlinkLike {
     /// @inheritdoc IScribeChainlinkLike
@@ -104,10 +107,7 @@ contract ScribeChainlinkLike is IScribeChainlinkLike {
     function latestAnswer() external view toll returns (int) {
         // assert(IToll(chronicle).tolled(address(this)));
 
-        // TODO: Use latestAnswer() once every deployed Scribe is >= v1.2.0.
-        //       Note that cast is safe as val's max value is type(uint128).max.
-        uint val = IScribe(chronicle).read();
-        int answer = int(val);
+        int answer = IScribe(chronicle).latestAnswer();
 
         return _convert(answer, decimals);
     }

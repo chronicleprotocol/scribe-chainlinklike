@@ -46,8 +46,8 @@ contract ScribeChainlinkLikeTest is Test {
             ForkTest({
                 chain: "eth",
                 watStr: "ETH/USD",
-                // See https://github.com/chronicleprotocol/chronicles/blob/main/deployments/prod/eth/Chronicle_ETH_USD_1.json.
-                chronicle: address(0x5E16CA75000fb2B9d7B1184Fa24fF5D938a345Ef),
+                // See https://github.com/chronicleprotocol/chronicles/blob/main/deployments/prod/eth/Chronicle_ETH_USD_3.json.
+                chronicle: address(0x46ef0071b1E2fF6B42d36e5A177EA43Ae5917f4E),
                 // See https://data.chain.link/ethereum/mainnet/crypto-usd/eth-usd.
                 chainlink: address(0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419),
                 // See https://etherscan.io/address/0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419#readContract.
@@ -59,8 +59,8 @@ contract ScribeChainlinkLikeTest is Test {
             ForkTest({
                 chain: "eth",
                 watStr: "BTC/USD",
-                // See https://github.com/chronicleprotocol/chronicles/blob/main/deployments/prod/eth/Chronicle_BTC_USD_1.json.
-                chronicle: address(0x898D1aB819a24880F636416df7D1493C94143262),
+                // See https://github.com/chronicleprotocol/chronicles/blob/main/deployments/prod/eth/Chronicle_BTC_USD_3.json.
+                chronicle: address(0x24C392CDbF32Cf911B258981a66d5541d85269ce),
                 // See https://data.chain.link/ethereum/mainnet/crypto-usd/btc-usd.
                 chainlink: address(0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c),
                 // See https://etherscan.io/address/0xf4030086522a5beea4988f8ca5b36dbc97bee88c#readContract.
@@ -72,8 +72,8 @@ contract ScribeChainlinkLikeTest is Test {
             ForkTest({
                 chain: "eth",
                 watStr: "MKR/USD",
-                // See https://github.com/chronicleprotocol/chronicles/blob/main/deployments/prod/eth/Chronicle_MKR_USD_1.json.
-                chronicle: address(0xb400027B7C31D67982199Fa48B8228F128691fCb),
+                // See https://github.com/chronicleprotocol/chronicles/blob/main/deployments/prod/eth/Chronicle_MKR_USD_3.json.
+                chronicle: address(0xa69e234a1f55072201127209a18230E89d9E71aC),
                 // See https://data.chain.link/ethereum/mainnet/crypto-usd/mkr-usd.
                 chainlink: address(0xec1D1B3b0443256cc3860e24a46F108e699484Aa),
                 // See https://etherscan.io/address/0xec1d1b3b0443256cc3860e24a46f108e699484aa#readContract.
