@@ -29,8 +29,8 @@ $ env | grep -e "RPC_URL" -e "KEYSTORE" -e "KEYSTORE_PASSWORD" -e "ETHERSCAN_API
 
 Two code adjustments are necessary to give each deployed contract instance a unique name:
 
-1. Adjust the `ScribeChainlinkLike_COUNTER`'s name in `src/ScribeChainlinkLike.sol` and remove the `@todo` comment
-2. Adjust the import of the `ScribeChainlinkLike_COUNTER` in `script/ScribeChainlinkLike.s.sol` and remove the `@todo` comment
+1. Adjust the `ChronicleScribeAdapter_BASE_QUOTE_COUNTER`'s name in `src/ScribeChainlinkLike.sol` and remove the `@todo` comment
+2. Adjust the import of the `ChronicleScribeAdapter_BASE_QUOTE_COUNTER` in `script/ScribeChainlinkLike.s.sol` and remove the `@todo` comment
 
 ## Execution
 

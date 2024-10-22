@@ -129,8 +129,8 @@ contract ScribeChainlinkLike is IScribeChainlinkLike {
  *
  *      For more info, see docs/Deployment.md.
  */
-contract ScribeChainlinkLike_COUNTER is ScribeChainlinkLike {
-    // @todo                 ^^^^^^^ Adjust counter of ScribeChainlinkLike instance.
+contract ChronicleScribeAdapter_BASE_QUOTE_COUNTER is ScribeChainlinkLike {
+    // @todo                    ^^^^ ^^^^^ ^^^^^^^ Adjust name of ScribeChainlinkLike instance.
     constructor(address chronicle, address chainlink)
         ScribeChainlinkLike(chronicle, chainlink)
     {}
